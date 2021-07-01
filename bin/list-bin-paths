@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-echo -n "go/bin packages/bin"
+# Don't overwrite a manually set GOBIN
+if [ -z "$GOBIN" ]; then
+  echo -n "go/bin packages/bin"
+else
+  echo -n "go/bin"
+fi
